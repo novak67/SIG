@@ -16,6 +16,10 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         toggleAppearance.layer.cornerRadius = 20.0
+        
     }
-
+    @IBAction func toggle(_ sender: Any) {
+        
+    }
+    
 }

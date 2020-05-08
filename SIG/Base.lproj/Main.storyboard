@@ -112,6 +112,9 @@
                                 <state key="normal" title="Toggle Dark/Light Mode">
                                     <color key="titleColor" red="0.74111062289999996" green="0.74121862650000003" blue="0.74108701939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="toggle:" destination="MK9-Io-e03" eventType="touchUpInside" id="7o9-a4-ULi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
