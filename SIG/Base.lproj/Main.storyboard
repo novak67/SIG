@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,27 +32,109 @@
                                     <action selector="onButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bk1-OV-bZo"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shakespeare line art" translatesAutoresizingMaskIntoConstraints="NO" id="0gs-nW-KXL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shakespeare line art" translatesAutoresizingMaskIntoConstraints="NO" id="0gs-nW-KXL">
                                 <rect key="frame" x="107" y="104" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="0Td-fh-wJ6"/>
+                                </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU9-6c-3cz">
+                                <rect key="frame" x="324" y="792" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="BV4-gl-Qag"/>
+                                    <constraint firstAttribute="height" constant="70" id="eeZ-hH-oTx"/>
+                                    <constraint firstAttribute="width" secondItem="QU9-6c-3cz" secondAttribute="height" multiplier="1:1" id="syZ-FY-Mxx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="20"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" red="0.74111062288284302" green="0.74121862649917603" blue="0.74108701944351196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="MK9-Io-e03" kind="show" id="Fm1-5r-1v2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bro-kl-qab" firstAttribute="centerX" secondItem="eXU-UL-cP5" secondAttribute="centerX" id="1qt-Ei-NVy"/>
                             <constraint firstItem="bro-kl-qab" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="396-j4-mdd"/>
+                            <constraint firstItem="QU9-6c-3cz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ClF-6G-T1y"/>
+                            <constraint firstItem="QU9-6c-3cz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="HLC-yc-uJZ"/>
                             <constraint firstItem="bro-kl-qab" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L2y-WI-91S"/>
+                            <constraint firstItem="0gs-nW-KXL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="Tqk-58-KGN"/>
+                            <constraint firstItem="0gs-nW-KXL" firstAttribute="centerX" secondItem="bro-kl-qab" secondAttribute="centerX" id="XcI-8W-sW8"/>
+                            <constraint firstItem="0gs-nW-KXL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="clR-hV-qkm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eXU-UL-cP5" secondAttribute="bottom" constant="197" id="fqp-Xa-DRF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="label" destination="bro-kl-qab" id="lBX-tN-jF1"/>
+                        <outlet property="settingsButton" destination="QU9-6c-3cz" id="5aF-Nu-Izb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="20.758928571428569"/>
+            <point key="canvasLocation" x="119" y="19"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="PQE-q0-JtP">
+            <objects>
+                <viewController title="Settings" id="MK9-Io-e03" customClass="SettingsViewController" customModule="SIG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jCm-1Y-aR1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iC-px-fVi">
+                                <rect key="frame" x="132.66666666666666" y="12" width="148.99999999999997" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="eyO-ns-Qah"/>
+                                    <constraint firstAttribute="height" constant="54" id="i8T-dG-MPp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="45"/>
+                                <color key="textColor" red="0.9106321383" green="0.9106321383" blue="0.9106321383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Appearance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7f-a2-5zA">
+                                <rect key="frame" x="107" y="140" width="200" height="44"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="30"/>
+                                <color key="textColor" red="0.9106321383" green="0.9106321383" blue="0.9106321383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlb-tp-GT2">
+                                <rect key="frame" x="57" y="192" width="300" height="50"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="laj-Hc-dFF"/>
+                                    <constraint firstAttribute="width" constant="300" id="wvJ-rs-7Ui"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="25"/>
+                                <state key="normal" title="Toggle Dark/Light Mode">
+                                    <color key="titleColor" red="0.74111062289999996" green="0.74121862650000003" blue="0.74108701939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="r7f-a2-5zA" firstAttribute="centerX" secondItem="5iC-px-fVi" secondAttribute="centerX" id="4Yw-V4-zoD"/>
+                            <constraint firstItem="r7f-a2-5zA" firstAttribute="leading" secondItem="kmj-Cb-8zM" secondAttribute="leading" constant="107" id="OwE-Hp-crk"/>
+                            <constraint firstItem="kmj-Cb-8zM" firstAttribute="bottom" secondItem="zlb-tp-GT2" secondAttribute="bottom" constant="566" id="PvT-Es-ce7"/>
+                            <constraint firstItem="zlb-tp-GT2" firstAttribute="top" secondItem="r7f-a2-5zA" secondAttribute="bottom" constant="8" id="Veg-Ed-Ogz"/>
+                            <constraint firstItem="r7f-a2-5zA" firstAttribute="centerX" secondItem="zlb-tp-GT2" secondAttribute="centerX" id="jXz-zF-fRf"/>
+                            <constraint firstItem="5iC-px-fVi" firstAttribute="centerX" secondItem="jCm-1Y-aR1" secondAttribute="centerX" id="seB-9S-Co9"/>
+                            <constraint firstItem="5iC-px-fVi" firstAttribute="top" secondItem="kmj-Cb-8zM" secondAttribute="top" constant="12" id="vd7-4Q-QM9"/>
+                            <constraint firstItem="r7f-a2-5zA" firstAttribute="top" secondItem="5iC-px-fVi" secondAttribute="bottom" constant="74" id="zmS-ax-5AF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kmj-Cb-8zM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ivc-Wm-oe1"/>
+                    <connections>
+                        <outlet property="toggleAppearance" destination="zlb-tp-GT2" id="LTa-zN-UOR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sN3-VU-uF1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1154" y="19"/>
         </scene>
     </scenes>
     <resources>
